@@ -7,7 +7,7 @@ from flask import Flask, request
 # إعدادات البوت
 # ==============================
 
-PAGE_ACCESS_TOKEN = "EAAeeRH0KFhgBRPUXmlexYGPx1MF1hWNi9fisVBtFxk1RNqJNsSzzVIiwj7NXUlq5Q8LaiIhh940T5FaH0fc6fFwORnna9NBo1VaqjNl6QxOkOZC56TcgRZCRuDdJlNXAgK7ZCEbQRcar2PMtCNcGTFY0mwEHWdFVZBQSQDVv98aZBhJhcgoLbDV6L9nxKODyXaZCwpwVnrZCAZDZD"
+PAGE_ACCESS_TOKEN = "EAAM4npZCeErYBRDpZC6yZARMRofiNiBZBbZBY0ZBF3zZBzZC8CK4MHZBRoXJ4GBmB44AKRz18owNjSxbbMLfYgUvgDsF4tlzyxsbkXrqJUQnK4jObSNSLaIDBSW4JRw83cIhI5NbbZAizqz4S6PwzBnN1cSTEHHVWCsVJmU6hZAkN3ZCJoUnSmHxX36LkpFsq194QHKAsyZAjcQZDZD"
 VERIFY_TOKEN = "miloud_verify_token"
 
 # ==============================
@@ -63,7 +63,7 @@ def send_message(psid, text):
 # ==============================
 def ask_ai(msg):
     data = {
-        "name": "Lahcen kaouar",
+        "name": "Usama",
         "messages": [{"role": "user", "content": msg}]
     }
     try:
@@ -75,6 +75,7 @@ def ask_ai(msg):
             timeout=30
         )
         resp_json = r.json()
+        # استخراج النص من JSON
         return resp_json['choices'][0]['message']['content']
     except Exception as e:
         print("❌ خطأ في AI:", e)
@@ -114,12 +115,10 @@ def webhook():
             if sender not in users:
                 users[sender] = {"messages": 0}
                 save_users(users)
-                # رسالة الترحيب المطلوبة
                 welcome = (
-                    "👋 أهلا بك في بوت Chat aiالذي تم تطويره بواسطة نجمة السماء\n"
+                    "👋 أهلا بك في بوت Miloud AI\n\n"
                     "🤖 يمكنك التحدث معي وسأجيبك بالذكاء الاصطناعي.\n"
-                    "📌 اكتب أي سؤال للبدء.\n"
-                    "راسل المطور:  https://www.facebook.com/profile.php?id=61575429936062"
+                    "📌 اكتب أي سؤال للبدء."
                 )
                 send_message(sender, welcome)
 
