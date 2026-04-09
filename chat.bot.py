@@ -116,10 +116,10 @@ def webhook():
                 save_users(users)
                 # رسالة الترحيب المطلوبة
                 welcome = (
-                    "👋 أهلا بك في بوت Chat aiالذي تم تطويره بواسطة king🥷\n"
+                    "👋 أهلا بك في بوت Chat aiالذي تم تطويره بواسطة نجمة السماء\n"
                     "🤖 يمكنك التحدث معي وسأجيبك بالذكاء الاصطناعي.\n"
                     "📌 اكتب أي سؤال للبدء.\n"
-                    "راسل المطور:  https://www.facebook.com/profile.php?id=61579515429304"
+                    "راسل المطور:  https://www.facebook.com/profile.php?id=61575429936062"
                 )
                 send_message(sender, welcome)
 
